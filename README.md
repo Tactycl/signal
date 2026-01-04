@@ -1,6 +1,6 @@
-# Roblox Signal Class  
+# Signal  
 
-The **Signal Class** is a lightweight utility designed to create **custom event systems** in Roblox, similar to `RBXScriptSignal`. It provides an intuitive API to manage connections, fire events, and track listener states with optional priority handling.  
+The **Signal** is a lightweight utility designed to create **custom event systems** in Roblox, similar to `RBXScriptSignal`. It provides an intuitive API to manage connections, fire events, and track listener states with optional priority handling.  
 
 ---
 
