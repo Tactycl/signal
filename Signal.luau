@@ -1,6 +1,6 @@
 --!strict
 
-type Callback = (any) -> (any)
+type Callback = (...any) -> (...any)
 type Listener = {
 	callback: Callback,
 	connection: Connection,
@@ -16,14 +16,14 @@ export type Connection = {
 export type Signal = {
 	_listeners: {Listener},
 
-	Connect: (self: Signal, callback: () -> (), priority: number?) -> Connection,
-	Once: (self: Signal, callback: () -> ()) -> Connection,
+	Connect: (self: Signal, callback: Callback, priority: number?) -> Connection,
+	Once: (self: Signal, callback: Callback) -> Connection,
 	Fire: (self: Signal, ...any) -> (),
 	Wait: (self: Signal) -> (...any),
 	DisconnectAll: (self: Signal) -> (),
 	HasConnections: (self: Signal) -> (boolean),
 	GetConnectionCount: (self: Signal) -> (number),
-	IsConnected: (self: Signal, callback: () -> ()) -> (boolean),
+	IsConnected: (self: Signal, callback: Callback) -> (boolean),
 	Destroy: (self: Signal) -> (),
 }
 
