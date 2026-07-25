@@ -78,12 +78,7 @@ function Signal:Fire(...)
 			continue
 		end
 
-		task.spawn(function(...)
-			local success: boolean, err: any = xpcall(listener.callback, debug.traceback, ...)
-			if not success then
-				warn("[Signal] Listener error:\n" .. err)
-			end
-		end, ...)
+		task.spawn(listener.callback, ...)
 	end
 end
 
